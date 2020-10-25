@@ -2,7 +2,10 @@ main {
   min-height: 80vh;
 }
 
-i,
-a {
-  color: rgb(14, 72, 120) !important;
+.rating span {
+  margin: 0.1rem;
+}
+
+.price {
+  padding: 1rem 0;
 }
