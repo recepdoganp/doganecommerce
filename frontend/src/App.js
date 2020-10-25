@@ -1,9 +1,25 @@
 import React from "react";
 
+// Style Bootstrap
+import { Container } from "react-bootstrap";
+
+// Components
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+// Screens
+import HomeScreen from "./screens/HomeScreen";
+
 const App = () => {
   return (
     <>
-      <h1>WElcome to Dogan's Shop</h1>
+      <Header />
+      <main className='py-3'>
+        <Container>
+          <HomeScreen />
+        </Container>
+      </main>
+      <Footer />
     </>
   );
 };
