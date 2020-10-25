@@ -1,0 +1,22 @@
+{
+  "name": "doganshop",
+  "version": "1.0.0",
+  "description": "MERN Shopping Cart App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/recepdoganp/doganecommerce.git"
+  },
+  "author": "Dogan Pezukoglu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/recepdoganp/doganecommerce/issues"
+  },
+  "homepage": "https://github.com/recepdoganp/doganecommerce#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -4,7 +4,6 @@ import { LinkContainer } from "react-router-bootstrap";
 
 // Style Bootstrap
 import { Container, Navbar, Nav, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 const Header = ({ color }) => {
   return (
