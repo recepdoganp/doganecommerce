@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: "1",
     name: "HAWKSBILL Penguen",
     image: "/images/blue_short.jpg",
     description:
@@ -13,7 +12,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "2",
     name: "HAWKSBILL Dumbbell",
     image: "/images/red_short.jpg",
     description:
@@ -26,7 +24,6 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: "3",
     name: "HAWKSBILL 80's",
     image: "/images/yellow_short.jpg",
     description:
@@ -39,7 +36,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "4",
     name: "HAWKSBILL 90's",
     image: "/images/brown_short.jpg",
     description:
@@ -52,7 +48,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: "5",
     name: "HAWKSBILL Treasure",
     image: "/images/green_short.jpg",
     description:
@@ -65,7 +60,6 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: "6",
     name: "HAWKSBILL Balloon",
     image: "/images/pink_short.jpg",
     description:
@@ -79,4 +73,4 @@ const products = [
   },
 ];
 
-module.exports = products;
+export default products;
