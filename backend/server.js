@@ -5,6 +5,9 @@ import colors from "colors";
 // import dependency files
 import connectDB from "./config/db.js";
 
+// export middlewares
+import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
+
 // import routes
 import productRoutes from "./routes/productRoutes.js";
 
@@ -21,6 +24,11 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/products", productRoutes);
+
+// If trying to access an incorrect URL
+app.use(notFound);
+// Error handler middleware
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
