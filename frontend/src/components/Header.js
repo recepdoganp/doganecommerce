@@ -23,7 +23,7 @@ const Header = ({ color }) => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
-              <LinkContainer to='/card' style={{ color }}>
+              <LinkContainer to='/cart' style={{ color }}>
                 <Nav.Link>
                   <i
                     style={{ color }}

@@ -6,6 +6,8 @@ import { listProducts } from "../actions/productActions";
 
 // Components
 import Product from "../components/Product";
+import Message from "../components/Message";
+import Loader from "../components/Loader";
 
 // Bootstrap
 import { Row, Col } from "react-bootstrap";
@@ -26,9 +28,9 @@ const HomeScreen = () => {
     <>
       <h1>Latest products</h1>
       {loading ? (
-        <h2>LOADING......</h2>
+        <Loader />
       ) : error ? (
-        <h3>{error}</h3>
+        <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
           {products.map((product) => (
