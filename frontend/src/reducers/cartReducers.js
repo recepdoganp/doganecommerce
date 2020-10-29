@@ -8,6 +8,7 @@ const initialState = {
   cartItems: cartItemsFromStorage,
 };
 
+console.log(cartItemsFromStorage);
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case CART_ADD_ITEM: {
