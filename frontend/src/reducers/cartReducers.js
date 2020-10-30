@@ -8,7 +8,6 @@ const initialState = {
   cartItems: cartItemsFromStorage,
 };
 
-console.log(cartItemsFromStorage);
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case CART_ADD_ITEM: {
@@ -30,6 +29,12 @@ export const cartReducer = (state = initialState, action) => {
           cartItems: [...state.cartItems, item],
         };
       }
+    }
+    case CART_REMOVE_ITEM: {
+      return {
+        ...state,
+        cartItems: state.cartItems.filter((x) => x.product !== action.payload),
+      };
     }
     default:
       return state;
