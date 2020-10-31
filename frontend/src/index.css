@@ -20,3 +20,7 @@ h2 {
   padding: 0.5rem 0;
   margin: 0 !important;
 }
+
+#username {
+  color: rgb(14, 72, 120);
+}

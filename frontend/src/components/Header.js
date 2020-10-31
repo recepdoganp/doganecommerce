@@ -1,11 +1,21 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import { LinkContainer } from "react-router-bootstrap";
 
 // Style Bootstrap
-import { Container, Navbar, Nav, Image } from "react-bootstrap";
+import { Container, Navbar, Nav, Image, NavDropdown } from "react-bootstrap";
+
+import { logout } from "../actions/userActions";
 
 const Header = ({ color }) => {
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+  const dispatch = useDispatch();
+
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
   return (
     <header>
       <Navbar bg='light' variant='dark' expand='md' collapseOnSelect>
@@ -32,11 +42,27 @@ const Header = ({ color }) => {
                   Cart
                 </Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/login' style={{ color }}>
-                <Nav.Link>
-                  <i style={{ color }} className='fas fa-user mr-1'></i>Login
-                </Nav.Link>
-              </LinkContainer>
+              {userInfo ? (
+                <NavDropdown
+                  className='mr-3'
+                  title={userInfo.name}
+                  id='username'
+                  style={{ color: "red" }}
+                >
+                  <LinkContainer to='/profile'>
+                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                  </LinkContainer>
+                  <NavDropdown.Item onClick={logoutHandler}>
+                    Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                <LinkContainer to='/login' style={{ color }}>
+                  <Nav.Link>
+                    <i style={{ color }} className='fas fa-user mr-1'></i>Login
+                  </Nav.Link>
+                </LinkContainer>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
