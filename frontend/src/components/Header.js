@@ -13,6 +13,9 @@ const Header = ({ color }) => {
   const { userInfo } = userLogin;
   const dispatch = useDispatch();
 
+  const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
+  const { success } = userUpdateProfile;
+
   const logoutHandler = () => {
     dispatch(logout());
   };
@@ -45,7 +48,9 @@ const Header = ({ color }) => {
               {userInfo ? (
                 <NavDropdown
                   className='mr-3'
-                  title={userInfo.name}
+                  title={
+                    success ? userUpdateProfile.userInfo.name : userInfo.name
+                  }
                   id='username'
                   style={{ color: "red" }}
                 >
