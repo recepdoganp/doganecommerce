@@ -58,6 +58,12 @@ const ProfileScreen = ({ history, location }) => {
       dispatch(updateUserProfile({ id: user._id, name, email, password }));
     }
   };
+  const successMarkup =
+    success &&
+    setTimeout(
+      () => <Message variant='success'>Profile Updated</Message>,
+      3000
+    );
 
   return (
     <Row>
@@ -65,7 +71,7 @@ const ProfileScreen = ({ history, location }) => {
         <h2>User Profile</h2>
         {message && <Message variant='danger'>{message}</Message>}
         {error && visible && <Message variant='danger'>{error}</Message>}
-        {success && <Message variant='success'>Profile Updated</Message>}
+        {successMarkup}
         {loading && <Loader />}
         <Form onSubmit={submitHandler}>
           <Form.Group controlId='name'>
