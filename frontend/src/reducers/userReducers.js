@@ -13,6 +13,7 @@ import {
   USER_UPDATE_PROFILE_REQUEST,
   USER_UPDATE_PROFILE_SUCCESS,
   USER_UPDATE_PROFILE_FAIL,
+  USER_UPDATE_PROFILE_RESET,
 } from "../constants/userConstants";
 
 const userInfoFromStorage = localStorage.getItem("userInfo")
@@ -106,7 +107,7 @@ export const userUpdateProfileReducer = (state = {}, action) => {
         error: action.payload,
       };
     }
-    case USER_REGISTER_CLEAR: {
+    case USER_UPDATE_PROFILE_RESET: {
       return {};
     }
     default: {
